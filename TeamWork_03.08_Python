@@ -1,0 +1,32 @@
+Task 1: 
+```pokemon_df = pd.read_csv('/content/Pokemon.csv')
+pokemon_value = pokemon_df['Type 1'] == 'Water'
+pokemon_value_total = (pokemon_value.sum() / pokemon_df.shape[0]) * 100
+print(f'The percentage of total Pokemon with Water type is {pokemon_value_total:.2f}%.')
+```
+Task 2:
+```pokemon_max = pokemon_df['Speed'].max()
+print(f'The maximum speed is: {pokemon_max}')
+pokemon_min = pokemon_df['Speed'].min()
+print(f'The minimum speed is: {pokemon_min}')
+pokemon_diff = pokemon_max - pokemon_min
+print(f'The difference is: {pokemon_diff}')
+```
+Task 3:
+```pokemon_speed = pokemon_df[(pokemon_df['Speed']>= 80)]
+print(f'Pokemons with speed higher or equal to 80 is: {len(pokemon_speed)}')
+plt.hist(pokemon_speed['Speed'], color = 'olive', edgecolor = 'black', alpha = 0.7)
+plt.title('Pokemon speed')
+plt.xlabel('Speed')
+plt.ylabel('Frequency')
+plt.show()
+```
+Task 4:
+```
+without_spaces = pokemon_df['Name'].str.replace(' ', '').str.len()
+longest_pokemon = without_spaces.idxmax()
+longest_pokemon_name = pokemon_df['Name'].iloc[longest_pokemon]
+print(f'The pokemon with longest name is: {longest_pokemon_name}')
+```
+
+
